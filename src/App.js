@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
-import { HashRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 
 import './App.css';
 
@@ -18,10 +18,8 @@ class App extends Component {
         <Router>
           <div>
             <Navbar />
-            <Routes>
-              <Route exact path='/' element={<Landing />} />
-              <Route exact path='/movie/:id' element={<Movie />} />
-            </Routes>
+            <Route exact path='/' component={Landing} />
+            <Route exact path='/movie/:id' component={Movie} />
           </div>
         </Router>
       </Provider>
